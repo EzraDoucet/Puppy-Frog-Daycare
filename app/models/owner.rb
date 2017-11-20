@@ -1,4 +1,8 @@
 class Owner < ApplicationRecord
+
+ has_many :custodies
+ has_many :dogs, through: :custodies
+
 end
 
 # == Schema Information
