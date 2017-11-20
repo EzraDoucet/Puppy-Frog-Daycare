@@ -31,6 +31,8 @@ breed_names = [
                 'Greyhound',
                 'Husky',
                 'Great Dane',
+                'BLack Lab',
+                'Beagle',
                 ]
 
 

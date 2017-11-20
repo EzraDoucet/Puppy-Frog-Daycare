@@ -1,5 +1,6 @@
 class Breed < ApplicationRecord
  has_many :dogs
+ validates :name, presence: true, length: {minimum: 3}, uniqueness: true
 end
 
 # == Schema Information
