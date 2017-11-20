@@ -7,6 +7,12 @@
     <%= f.input :weight %>
     <%= f.input :dob %>
     <%= f.input :in_daycare %>
+    <%= f.simple_fields_for(:custodies) do |custody_fields| %>
+      <%= custody_fields.association :owner, collection: Owner.order(:last_name, :first_name) %>
+      <% if custody_fields.object.persisted? %>
+        <%= custody_fields.input :_destroy, as: :boolean %>
+      <% end %>
+    <% end %>
     <%= f.association :vet %>
   </div>
 

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Breed:</strong>
-  <%= @dog.breed %>
+  <%= @dog.breed.try(:name) %>
 </p>
 
 <p>
@@ -23,6 +23,16 @@
 <p>
   <strong>In daycare:</strong>
   <%= @dog.in_daycare %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <ul>
+  <% @dog.owners.each do |owner| %>
+    <li><%= owner.try(:name) %></li>
+  <% end %>
+
+  </ul>
 </p>
 
 <p>

@@ -1,8 +1,27 @@
 class Dog < ApplicationRecord
   belongs_to :breed
-  belongs_to :vet
+  belongs_to :vet, optional: true
   has_many :custodies
   has_many :owners, through: :custodies
+
+  accepts_nested_attributes_for :custodies
+
+
+  def last_name
+   if custodies.empty?
+    "(none)"
+   else
+    custodies.first.owner.last_name
+   end
+  end
+
+  # def in_care
+  #  if Dog.in_daycare == false
+  #   return "Not in Daycare"
+  #  else
+  #   return "In Daycare"
+  #  end
+  # end
 end
 
 # == Schema Information
