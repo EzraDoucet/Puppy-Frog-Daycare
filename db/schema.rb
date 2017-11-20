@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120163821) do
+ActiveRecord::Schema.define(version: 20171120164137) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "custodies", force: :cascade do |t|
+    t.integer "dog_id"
+    t.integer "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_custodies_on_dog_id"
+    t.index ["owner_id"], name: "index_custodies_on_owner_id"
   end
 
   create_table "dogs", force: :cascade do |t|
