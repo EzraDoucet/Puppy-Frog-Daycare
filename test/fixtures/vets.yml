@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  doctor: MyString
+  clinic: MyString
+  phone: MyString
+  fax: MyString
+
+two:
+  doctor: MyString
+  clinic: MyString
+  phone: MyString
+  fax: MyString
+
+# == Schema Information
+#
+# Table name: vets
+#
+#  id         :integer          not null, primary key
+#  doctor     :string
+#  clinic     :string
+#  phone      :string
+#  fax        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
