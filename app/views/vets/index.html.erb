@@ -24,9 +24,9 @@
           <td><%= vet.clinic %></td>
           <td><%= vet.phone %></td>
           <td><%= vet.fax %></td>
-          <td class="fa fa-eye" aria-hidden="true"><%= link_to ' View', vet %></td>
-          <td class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to ' Edit', edit_vet_path(vet) %></td>
-          <td class="fa fa-trash" aria-hidden="true"><%= link_to ' Trash', vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to fa_icon('eye'), vet %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_vet_path(vet) %></td>
+          <td><%= link_to fa_icon('trash'), vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

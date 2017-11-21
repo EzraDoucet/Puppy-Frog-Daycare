@@ -37,9 +37,9 @@
           <td><%= owner.secondary_phone %></td>
           <td><%= owner.emergency_name %></td>
           <td><%= owner.emergency_phone %></td>
-          <td class="fa fa-eye" aria-hidden="true"><%= link_to ' View', owner %></td>
-          <td class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to ' Edit', edit_owner_path(owner) %></td>
-          <td class="fa fa-trash" aria-hidden="true"><%= link_to ' Trash', owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to fa_icon('eye'), owner %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_owner_path(owner) %></td>
+          <td><%= link_to fa_icon('trash'), owner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

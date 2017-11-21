@@ -27,9 +27,9 @@
           <td><%= dog.dob %></td>
           <td><%= dog.in_daycare %></td>
           <td><%= dog.vet %></td>
-          <td class="fa fa-eye" aria-hidden="true"><%= link_to ' View', dog %></td>
-          <td class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to ' Edit', edit_dog_path(dog) %></td>
-          <td class="fa fa-trash" aria-hidden="true"><%= link_to ' Trash', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to fa_icon('eye'), dog %></td>
+          <td><%= link_to fa_icon('pencil-square-o'), edit_dog_path(dog) %></td>
+          <td><%= link_to fa_icon('trash'), dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
