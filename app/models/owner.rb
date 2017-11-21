@@ -7,6 +7,9 @@ class Owner < ApplicationRecord
   "#{last_name}, #{first_name}"
  end
 
+ validates :name, presence: true, length: {minimum: 3}, uniqueness: true
+
+
 end
 
 # == Schema Information

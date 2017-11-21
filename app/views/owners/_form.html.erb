@@ -4,6 +4,11 @@
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
+    <%= f.simple_fields_for(:custodies) do |custody_fields| %>
+      <%= custody_fields.association :dog, collection: Dog.order(:name) %>
+      <% if custody_fields.object.persisted? %>
+        <%= custody_fields.input :_destroy, as: :boolean %>
+      <% end %>
     <%= f.input :street %>
     <%= f.input :city %>
     <%= f.input :state %>

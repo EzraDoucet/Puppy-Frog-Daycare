@@ -6,6 +6,8 @@ class Dog < ApplicationRecord
 
   accepts_nested_attributes_for :custodies
 
+  validates :name, presence: true
+
 
   def last_name
    if custodies.empty?

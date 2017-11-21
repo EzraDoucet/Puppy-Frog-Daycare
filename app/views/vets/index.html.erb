@@ -1,33 +1,44 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container index-title" style="text-align: center">
 <h1>Vets</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Doctor</th>
-      <th>Clinic</th>
-      <th>Phone</th>
-      <th>Fax</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vets.each do |vet| %>
+<div class="container">
+  <table class = "table table-striped table-hover table-responsive{-sm|-md|-lg|-xl}">
+    <caption>Vets' Info</caption>
+    <thead>
       <tr>
-        <td><%= vet.doctor %></td>
-        <td><%= vet.clinic %></td>
-        <td><%= vet.phone %></td>
-        <td><%= vet.fax %></td>
-        <td><%= link_to 'Show', vet %></td>
-        <td><%= link_to 'Edit', edit_vet_path(vet) %></td>
-        <td><%= link_to 'Destroy', vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Doctor</th>
+        <th>Clinic</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @vets.each do |vet| %>
+        <tr>
+          <td><%= vet.doctor %></td>
+          <td><%= vet.clinic %></td>
+          <td><%= vet.phone %></td>
+          <td><%= vet.fax %></td>
+          <td class="fa fa-eye" aria-hidden="true"><%= link_to ' View', vet %></td>
+          <td class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to ' Edit', edit_vet_path(vet) %></td>
+          <td class="fa fa-trash" aria-hidden="true"><%= link_to ' Trash', vet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New Vet', new_vet_path %>
+<div class="container form-button">
+  <div class="row">
+    <div>
+<%= link_to 'New Vet', new_vet_path, class: 'btn btn-info' %>
+    </div>
+  </div>
+</div>

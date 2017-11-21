@@ -1,7 +1,7 @@
 <%= simple_form_for(@dog) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="field container form-inputs" style="text-align: center">
     <%= f.input :name %>
     <%= f.association :breed %>
     <%= f.input :weight %>
@@ -16,7 +16,7 @@
     <%= f.association :vet %>
   </div>
 
-  <div class="form-actions">
+  <div class="actions container form-actions" style="text-align: center">
     <%= f.button :submit %>
   </div>
 <% end %>
